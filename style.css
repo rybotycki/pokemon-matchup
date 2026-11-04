@@ -32,3 +32,18 @@
 @keyframes dex-led-on{from{opacity:.4;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
 @media(max-width:900px){.hero-ball{display:block;width:76px;height:76px;margin:36px auto 0}.hero-ball .ball-top,.hero-ball .ball-bottom,.hero-ball .ball-hub{border-width:4px}.hero-ball.is-open .ball-top{transform:translateY(-8px) rotate(-32deg)}.hero-ball .ball-hub:after{border-width:1px}.hero-ball.is-open .ball-bottom{transform:translateY(3px) rotate(5deg)}.workspace{margin-top:20px}}
 @media(prefers-reduced-motion:reduce){.workspace,#result,.result-card,.lens:after,.led{animation:none}.hero-ball,.ball-top,.ball-bottom,.ball-hub,.ball-glow,.quick button{transition:none}.hero-ball:hover,.hero-ball:active{transform:rotate(-17deg)}}
+
+/* Keep the lookup above the fold at every screen size. */
+main{display:block;max-width:760px;padding:20px 24px 28px}
+.intro{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:64px;padding:0;text-align:left;margin:0 5px 15px}
+.intro h1{font-size:25px;line-height:1.2;letter-spacing:-.9px;margin:0}
+.intro h1 span{display:inline}
+.intro .hero-ball{display:block;flex-shrink:0;width:48px;height:48px;margin:8px 7px 5px 0}
+.intro .hero-ball .ball-top,.intro .hero-ball .ball-bottom,.intro .hero-ball .ball-hub{border-width:3px}
+.intro .hero-ball .ball-hub:after{border-width:1px}
+.intro .hero-ball.is-open .ball-top{transform:translateY(-5px) rotate(-32deg)}
+.intro .hero-ball.is-open .ball-bottom{transform:translateY(2px) rotate(5deg)}
+.workspace{margin-top:0}
+.explanation{margin:24px 5px 0}
+.top{padding-top:18px;padding-bottom:18px}
+@media(max-width:480px){main{padding:10px 13px 24px}.top{padding:14px 17px}.top-note{display:none}.intro{min-height:54px;margin-bottom:9px;gap:10px}.intro h1{font-size:21px;letter-spacing:-.6px}.intro .hero-ball{width:42px;height:42px;margin-right:5px}.workspace{margin-top:0}}

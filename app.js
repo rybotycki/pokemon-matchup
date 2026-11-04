@@ -21,3 +21,12 @@ search.addEventListener('input',showSuggestions);search.addEventListener('focus'
 document.querySelector('#count').textContent=new Set(indexed.map(p=>p.dex)).size+' Pokémonów · '+indexed.length+' form';document.querySelector('#date').textContent='Baza '+DATA.date;
 function fromHash(){let slug;try{slug=decodeURIComponent(location.hash.slice(1));}catch{slug='';}return indexed.find(p=>p.slug===slug);}
 select(fromHash()||indexed.find(p=>p.slug==='charizard'),false,false);window.addEventListener('hashchange',()=>{const p=fromHash();if(p)select(p,false,false);});
+
+// A native button keeps the Poké Ball usable with touch, Enter and Space.
+const pokeBall=document.querySelector('.hero-ball');
+pokeBall.addEventListener('click',()=>{
+ const opened=pokeBall.classList.toggle('is-open');
+ pokeBall.setAttribute('aria-pressed',String(opened));
+ pokeBall.setAttribute('aria-label',opened?'Zamknij Poké Ball':'Otwórz Poké Ball');
+ pokeBall.title=opened?'Zamknij Poké Ball':'Otwórz Poké Ball';
+});

@@ -5,13 +5,13 @@
 <meta name="theme-color" content="#d93444">
 <meta name="description" content="Wpisz nazwę Pokémona i sprawdź skuteczność wszystkich typów ataków. Formy regionalne, podpowiedzi i działanie bez API.">
 <title>PokéMatch — sprawdź, czym atakować</title>
-<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=2">
-<script src="data.js" defer></script><script src="app.js?v=2" defer></script>
+<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=3">
+<script src="data.js" defer></script><script src="app.js?v=3" defer></script>
 </head>
 <body>
 <header class="top"><a href="./" class="brand"><span class="brandmark" aria-hidden="true">◒</span> PokéMatch<span class="brand-dot">.</span></a><span class="top-note">BATTLE COMPANION</span></header>
 <main>
-<section class="intro"><span class="eyebrow"><i></i> POKÉDEX / TYPE CHECKER</span><h1>Wiedz, czym<br><span>atakować.</span></h1><p>Wybierz Pokémona przeciwnika.<br>Sprawdź słabości, odporności i niewrażliwości.</p><div class="hero-ball" aria-hidden="true"><span></span></div><span class="trainer-note">POZNAJ PRZECIWNIKA. WYBIERZ ATAK.</span></section>
+<section class="intro"><span class="eyebrow"><i></i> POKÉDEX / TYPE CHECKER</span><h1>Wiedz, czym<br><span>atakować.</span></h1><p>Wybierz Pokémona przeciwnika.<br>Sprawdź słabości, odporności i niewrażliwości.</p><button class="hero-ball" type="button" aria-label="Otwórz Poké Ball" aria-pressed="false" title="Otwórz Poké Ball"><span class="ball-glow" aria-hidden="true"></span><span class="ball-bottom" aria-hidden="true"></span><span class="ball-top" aria-hidden="true"></span><span class="ball-hub" aria-hidden="true"></span></button><span class="trainer-note">POZNAJ PRZECIWNIKA. WYBIERZ ATAK.</span></section>
 <section class="workspace" aria-label="Wyszukiwanie i wyniki"><div class="device-top" aria-hidden="true"><span class="lens"></span><span class="led red"></span><span class="led yellow"></span><span class="led green"></span><span class="device-label">POKÉMATCH / DEX-01</span></div>
 <div class="search-wrap"><label for="search">Pokémon przeciwnika</label><div class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Wpisz nazwę lub numer, np. Charizard" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false"><kbd aria-hidden="true">/</kbd></div><ul id="suggestions" role="listbox" aria-label="Podpowiedzi" hidden></ul><p id="search-status" class="sr-only" role="status"></p></div>
 <div class="quick" id="quick"><span>Wypróbuj</span><button data-slug="charizard">Charizard ↗</button><button data-slug="gyarados">Gyarados ↗</button><button data-slug="ninetales-alola">Alolan Ninetales ↗</button></div>

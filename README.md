@@ -14,6 +14,8 @@ Nie potrzeba instalacji zależności, klucza API ani kompilacji. Plik `.nojekyll
 
 ## Obsługa
 
+Przełącznik **Pokémon / Typy** pozwala wybrać nazwę Pokémona albo bezpośrednio jeden lub dwa typy obronne. W trybie Typy drugi typ jest opcjonalny, a wynik aktualizuje się od razu. Adres np. `#types/fire+flying` zapisuje wybraną kombinację.
+
 Wpisz angielską nazwę, fragment nazwy, formę (np. `alolan ninetales`) lub numer Pokédexu. Wybierz wynik myszą lub strzałkami i Enter. Escape zamyka podpowiedzi; `/` ustawia kursor w wyszukiwarce. Adres z `#nazwa-formy` można skopiować.
 
 Otwórz `index.html` bezpośrednio, by używać lokalnie. Dane i logika działają bez internetu; fonty i obrazki są dodatkami pobieranymi z zewnątrz, z lokalnym zastępnikiem. Wersja hostowana wymaga załadowania strony z internetu (nie jest instalowaną aplikacją offline).

@@ -5,16 +5,19 @@
 <meta name="theme-color" content="#d93444">
 <meta name="description" content="Wpisz nazwę Pokémona i sprawdź skuteczność wszystkich typów ataków. Formy regionalne, podpowiedzi i działanie bez API.">
 <title>PokéMatch — sprawdź, czym atakować</title>
-<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=4">
-<script src="data.js" defer></script><script src="app.js?v=3" defer></script>
+<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=5">
+<script src="data.js" defer></script><script src="app.js?v=5" defer></script>
 </head>
 <body>
 <header class="top"><a href="./" class="brand"><span class="brandmark" aria-hidden="true">◒</span> PokéMatch<span class="brand-dot">.</span></a><span class="top-note">BATTLE COMPANION</span></header>
 <main>
 <section class="intro"><h1>Sprawdź <span>typy ataków.</span></h1><button class="hero-ball" type="button" aria-label="Otwórz Poké Ball" aria-pressed="false" title="Otwórz Poké Ball"><span class="ball-glow" aria-hidden="true"></span><span class="ball-bottom" aria-hidden="true"></span><span class="ball-top" aria-hidden="true"></span><span class="ball-hub" aria-hidden="true"></span></button></section>
 <section class="workspace" aria-label="Wyszukiwanie i wyniki"><div class="device-top" aria-hidden="true"><span class="lens"></span><span class="led red"></span><span class="led yellow"></span><span class="led green"></span><span class="device-label">POKÉMATCH / DEX-01</span></div>
-<div class="search-wrap"><label for="search">Pokémon przeciwnika</label><div class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Wpisz nazwę lub numer, np. Charizard" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false"><kbd aria-hidden="true">/</kbd></div><ul id="suggestions" role="listbox" aria-label="Podpowiedzi" hidden></ul><p id="search-status" class="sr-only" role="status"></p></div>
+<div class="mode-switch" role="group" aria-label="Sposób wyboru przeciwnika"><button type="button" id="mode-pokemon" aria-pressed="true" aria-controls="pokemon-controls">Pokémon</button><button type="button" id="mode-types" aria-pressed="false" aria-controls="type-controls">Typy</button></div>
+<div id="pokemon-controls"><div class="search-wrap"><label for="search">Pokémon przeciwnika</label><div class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Wpisz nazwę lub numer, np. Charizard" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false"><kbd aria-hidden="true">/</kbd></div><ul id="suggestions" role="listbox" aria-label="Podpowiedzi" hidden></ul><p id="search-status" class="sr-only" role="status"></p></div>
 <div class="quick" id="quick"><span>Wypróbuj</span><button data-slug="charizard">Charizard ↗</button><button data-slug="gyarados">Gyarados ↗</button><button data-slug="ninetales-alola">Alolan Ninetales ↗</button></div>
+</div>
+<div id="type-controls" hidden><p class="type-help">Wybierz typy obronne przeciwnika.</p><div class="type-selectors"><div><label for="type-first">Pierwszy typ</label><select id="type-first"></select></div><div><label for="type-second">Drugi typ <span>(opcjonalny)</span></label><select id="type-second"><option value="">Brak</option></select></div></div></div>
 <div id="result" aria-live="polite"></div>
 </section>
 <section class="explanation"><span class="info-icon">i</span><div><h2>Liczy się typ ataku</h2><p>Mnożnik pokazuje wpływ typu ataku na wybranego Pokémona. Dwa typy obronne łączą swoje efekty. Uwzględniamy wyłącznie typy: bez Abilities, przedmiotów i efektów ruchów. Współczesna tabela typów (od generacji VI).</p></div></section>

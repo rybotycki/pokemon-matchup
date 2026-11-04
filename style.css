@@ -47,3 +47,17 @@ main{display:block;max-width:760px;padding:20px 24px 28px}
 .explanation{margin:24px 5px 0}
 .top{padding-top:18px;padding-bottom:18px}
 @media(max-width:480px){main{padding:10px 13px 24px}.top{padding:14px 17px}.top-note{display:none}.intro{min-height:54px;margin-bottom:9px;gap:10px}.intro h1{font-size:21px;letter-spacing:-.6px}.intro .hero-ball{width:42px;height:42px;margin-right:5px}.workspace{margin-top:0}}
+
+/* Compact input modes share the same matchup output. */
+[hidden]{display:none!important}
+.mode-switch{display:flex;gap:3px;padding:3px;margin:0 0 14px;border:1px solid #922036;border-radius:7px;background:#9b20344d}
+.mode-switch button{flex:1;border:0;border-radius:4px;padding:8px 12px;background:transparent;color:#fff8ef;font-size:12px;font-weight:700}
+.mode-switch button[aria-pressed=true]{background:#fff6dc;color:var(--ink);box-shadow:0 2px 0 #922036}
+.mode-switch button:hover{background:#ffebbd;color:var(--ink)}
+.type-help{margin:0 0 10px;color:#fff8ef;font-size:11px}
+.type-selectors{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-bottom:20px}
+.type-selectors label{display:block;font-size:10px;color:#fff8ef;font-weight:700;margin-bottom:7px}
+.type-selectors label span{font-weight:400}
+.type-selectors select{width:100%;min-width:0;height:45px;border:2px solid var(--ink);border-radius:7px;background:#fffdf5;color:var(--ink);font:600 13px 'DM Sans',system-ui;padding:0 9px;box-shadow:0 3px 0 #922036;cursor:pointer}
+.type-selectors select:focus-visible{outline:3px solid #ffdf65;outline-offset:1px}
+@media(max-width:480px){.type-selectors{gap:7px}.type-selectors label{font-size:9px}.mode-switch{margin-bottom:12px}}

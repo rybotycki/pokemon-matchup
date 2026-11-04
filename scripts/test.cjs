@@ -1,0 +1,9 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const context={window:{}};vm.createContext(context);vm.runInContext(fs.readFileSync('data.js','utf8'),context);const d=context.window.POKE_DATA;
+const source=fs.readFileSync('app.js','utf8');vm.runInContext(source.slice(0,source.indexOf('const search=document')),context);
+function run(s){return vm.runInContext(s,context);}
+function mult(slug,type){return run(`effectiveness(DATA.pokemon.find(p=>p.slug===${JSON.stringify(slug)}).types).find(v=>v.type===${JSON.stringify(type)}).multiplier`);}
+assert.equal(mult('charizard','rock'),4);assert.equal(mult('charizard','ground'),0);assert.equal(mult('gyarados','electric'),4);assert.equal(mult('swampert','grass'),4);assert.equal(mult('ferrothorn','fire'),4);assert.equal(mult('ferrothorn','grass'),.25);assert.equal(mult('gengar','ground'),2);assert.equal(mult('ninetales-alola','steel'),4);assert.equal(mult('weezing-galar','dragon'),0);assert.equal(mult('shedinja','water'),1);
+assert.equal(run(`searchPokemon('alolan ninetales')[0].slug`),'ninetales-alola');assert.equal(run(`searchPokemon('GALAR weezing')[0].slug`),'weezing-galar');assert.equal(run(`searchPokemon('Mr. Mime')[0].dex`),122);assert.equal(run(`searchPokemon('25')[0].dex`),25);assert.equal(run(`searchPokemon('nidoran female')[0].dex`),29);assert.equal(run(`searchPokemon('notapokemon').length`),0);
+for(const p of d.pokemon){assert.ok(p.name);assert.ok(p.types.length>=1&&p.types.length<=2);for(const attack in d.chart){let n=1;for(const def of p.types){assert.equal(typeof d.chart[attack][def],'number');n*=d.chart[attack][def];}assert.ok([0,.25,.5,1,2,4].includes(n));}}
+assert.equal(Object.keys(d.chart).length,18);assert.equal(new Set(d.pokemon.map(p=>p.slug)).size,d.pokemon.length);assert.equal(new Set(d.pokemon.map(p=>p.dex)).size,1025);console.log(`PASS: ${d.pokemon.length} forms, 18 attack types, known matchups, regional forms, name and number search.`);

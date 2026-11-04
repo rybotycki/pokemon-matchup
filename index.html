@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101716">
+<meta name="description" content="Wpisz nazwę Pokémona i sprawdź skuteczność wszystkich typów ataków. Formy regionalne, podpowiedzi i działanie bez API.">
+<title>PokéMatch — sprawdź, czym atakować</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+<script src="data.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<header class="top"><a href="./" class="brand"><span class="brandmark" aria-hidden="true">◒</span> PokéMatch<span class="brand-dot">.</span></a><span class="top-note">TWÓJ POMOCNIK W WALCE</span></header>
+<main>
+<section class="intro"><span class="eyebrow"><i></i> TYPE MATCHUP CHECKER</span><h1>Wiedz, czym<br><span>atakować.</span></h1><p>Wybierz Pokémona przeciwnika.<br>Sprawdź słabości, odporności i niewrażliwości.</p></section>
+<section class="workspace" aria-label="Wyszukiwanie i wyniki">
+<div class="search-wrap"><label for="search">Pokémon przeciwnika</label><div class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Wpisz nazwę lub numer, np. Charizard" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false"><kbd aria-hidden="true">/</kbd></div><ul id="suggestions" role="listbox" aria-label="Podpowiedzi" hidden></ul><p id="search-status" class="sr-only" role="status"></p></div>
+<div class="quick" id="quick"><span>Wypróbuj</span><button data-slug="charizard">Charizard ↗</button><button data-slug="gyarados">Gyarados ↗</button><button data-slug="ninetales-alola">Alolan Ninetales ↗</button></div>
+<div id="result" aria-live="polite"></div>
+</section>
+<section class="explanation"><span class="info-icon">i</span><div><h2>Liczy się typ ataku</h2><p>Mnożnik pokazuje wpływ typu ataku na wybranego Pokémona. Dwa typy obronne łączą swoje efekty. Uwzględniamy wyłącznie typy: bez Abilities, przedmiotów i efektów ruchów. Współczesna tabela typów (od generacji VI).</p></div></section>
+</main>
+<footer><span>PokéMatch <span class="muted">/</span> <span id="count"></span></span><span>Dane: <a href="https://pokeapi.co/" target="_blank" rel="noopener">PokéAPI ↗</a> · <span id="date"></span></span><small>Fanowski projekt. Pokémon należy do Nintendo, Game Freak i Creatures.</small></footer>
+</body></html>

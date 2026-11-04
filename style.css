@@ -79,3 +79,5 @@ main{display:block;max-width:760px;padding:20px 24px 28px}
 .type-none{grid-column:1/-1;font-size:11px;color:#64746b;padding:7px;border:1px dashed #acbbae}
 @media(max-width:600px){.type-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:10px}.type-trigger{padding:6px 8px}.type-trigger .badge{font-size:11px;min-width:70px;padding:6px 9px}.type-placeholder{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.type-choice:hover:not(:disabled){transform:none}}
+
+.type-result-head{padding:14px 18px}.type-result-head .type-badges{margin-top:8px}

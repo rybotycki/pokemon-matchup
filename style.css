@@ -81,3 +81,28 @@ main{display:block;max-width:760px;padding:20px 24px 28px}
 @media(prefers-reduced-motion:reduce){.type-choice:hover:not(:disabled){transform:none}}
 
 .type-result-head{padding:14px 18px}.type-result-head .type-badges{margin-top:8px}
+
+/* Page navigation stays separate from the Pokémon/type input mode. */
+.page-tabs{display:flex;gap:6px;margin:0 5px 20px;border-bottom:2px solid #253b4322}
+.page-tabs [role=tab]{font:700 14px 'DM Sans',system-ui;padding:11px 16px 12px;background:transparent;border:0;border-bottom:3px solid transparent;color:var(--muted);margin-bottom:-2px}
+.page-tabs [aria-selected=true]{color:var(--dark-red);border-bottom-color:var(--red)}
+.page-tabs button:hover{color:var(--dark-red);background:#d9344408}
+.evo-controls{margin:0 0 18px}.evo-search-wrap{margin-top:15px}
+.game-picker{position:relative;z-index:8;background:#fff9e9;border:2px solid var(--ink);border-radius:8px;box-shadow:0 3px 0 #922036}
+.game-picker>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:12px 13px;color:var(--ink)}
+.game-picker>summary::-webkit-details-marker{display:none}.game-picker>summary>span:first-child{font-size:10px;font-weight:600;color:var(--muted)}
+.game-picker strong{flex:1;font-size:13px}.game-list{position:absolute;top:100%;left:-2px;right:-2px;max-height:350px;overflow:auto;padding:12px;background:#fff9e9;border:2px solid var(--ink);border-radius:0 0 9px 9px;box-shadow:0 9px 18px #253b4330}
+.game-generation h3{font:700 9px ui-monospace,monospace;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:8px 0}.game-options{display:flex;gap:6px;flex-wrap:wrap;padding-bottom:8px;border-bottom:1px solid #253b4315}
+.game-option{border:1px solid #b5c5b7;border-radius:5px;background:#f0f5e8;color:var(--ink);font:600 11px 'DM Sans',system-ui;padding:7px 10px}.game-option:hover,.game-option[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff9e9}
+.evo-version-note{font-size:10px;line-height:1.6;color:#fff2de;margin:11px 0 0}
+.evo-suggestions{position:absolute;top:100%;width:100%;margin:7px 0 0;padding:6px;background:#fffdf5;border:2px solid var(--ink);border-radius:9px;max-height:330px;overflow:auto;list-style:none;box-shadow:0 12px 25px #253b4340}
+.evo-suggestions li{padding:11px 9px;display:flex;gap:10px;cursor:pointer;border-radius:5px;font-size:12px}.evo-suggestions li[aria-selected=true],.evo-suggestions li:hover{background:#dbeebc}.evo-suggestions .dex{font:10px monospace;color:var(--muted)}
+.evolution-card{margin-top:23px}.evolution-card .pokemon-head{padding:16px 18px}.evo-thumb{width:64px;height:64px;object-fit:contain;image-rendering:pixelated;flex-shrink:0}.evolution-card .pokemon-name{margin-bottom:0;font-size:26px}
+.evolution-body{padding:0 18px 8px}.evo-section{padding:18px 0;border-bottom:1px dashed #bbcbbb}.evo-section:last-child{border-bottom:0}.evo-section-title{font-size:12px;font-weight:700;margin:0 0 12px;color:var(--ink)}
+.evo-edge{padding:10px 12px;margin:8px 0;border:1px solid #bdcdbb;border-radius:8px;background:#fffdf59c}
+.evo-edge-line{display:grid;grid-template-columns:minmax(0,1fr) 20px minmax(0,1fr);align-items:center;gap:10px}.evo-node{display:flex;align-items:center;text-align:left;gap:6px;background:transparent;border:0;border-radius:5px;color:var(--ink);font:700 12px/1.3 'DM Sans',system-ui;padding:0;min-width:0}.evo-node span{overflow-wrap:anywhere}.evo-node:hover{text-decoration:underline;color:var(--dark-red)}.evo-node .evo-thumb{width:45px;height:45px}.evo-arrow{color:var(--dark-red);font-size:21px}
+.evo-condition{font-size:11px;line-height:1.7;margin:8px 0 0;color:#475b50;overflow-wrap:anywhere}.evo-edge .evo-condition{border-top:1px solid #253b4310;padding-top:8px}.evo-empty,.evo-footnote{font-size:11px;line-height:1.7;color:#64786a;margin:0}.evo-footnote{margin:13px 0 0;font-size:10px}
+.evo-notice{font-size:12px;line-height:1.7;padding:12px;margin:16px 0 4px;border:1px solid #cfb76d;background:#fff2cf;border-radius:7px;color:#694e1b}.evo-branches{padding:15px 0;border-bottom:1px dashed #bbcbbb}.evo-branches>summary{font-size:11px;font-weight:700;cursor:pointer;color:#5b6b5e}.evo-branches .evo-section{padding-bottom:0}
+.transformation-card{padding:13px;background:#e3eadc;border:1px solid #bdcdbb;border-radius:8px;margin-top:9px}.transformation-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.transformation-kind{font:700 9px ui-monospace,monospace;letter-spacing:.7px;text-transform:uppercase;color:var(--dark-red)}.transformation-card h4{font-size:14px;line-height:1.3;margin:6px 0 0}.transformation-card .evo-thumb{width:60px;height:60px}
+.evo-sources{font-size:10px;line-height:1.7;color:var(--muted);margin:24px 5px 0}.evo-sources summary{cursor:pointer}.evo-sources a{text-decoration:underline}.evo-loading{font-size:12px;line-height:1.7;color:#fff9e9;padding:10px 3px}.retry-button{padding:8px 12px;border:2px solid var(--ink);border-radius:7px;background:#fff9e9;color:var(--ink);font:700 12px 'DM Sans',system-ui}
+@media(max-width:480px){.page-tabs{margin-bottom:13px}.page-tabs [role=tab]{font-size:12px;padding:9px 12px}.game-picker>summary{padding:10px}.game-picker strong{font-size:12px}.evolution-body{padding:0 11px 4px}.evo-edge{padding:8px}.evo-edge-line{gap:4px;grid-template-columns:minmax(0,1fr) 15px minmax(0,1fr)}.evo-node{font-size:10px;flex-direction:column;text-align:center;gap:1px}.evo-node .evo-thumb{width:42px;height:42px}.evolution-card .pokemon-name{font-size:23px}.evo-condition{font-size:10px}.evo-section{padding:15px 0}.game-list{padding:8px}.game-option{font-size:10px;padding:7px 8px}}

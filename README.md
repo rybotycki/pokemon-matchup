@@ -1,5 +1,7 @@
 # PokéMatch
 
+Dwie zakładki: **Typy ataków** (domyślna) i **Ewolucje**. Ewolucje zawierają wybór gry, preewolucje, dalsze etapy, warunki i dostępne przemiany w walce. Szczegóły danych i odtwarzania bazy: [EVOLUTION-SOURCES.md](EVOLUTION-SOURCES.md).
+
 Statyczna wyszukiwarka słabości Pokémonów. Wszystkie gatunki i formy dostępne w dołączonym zrzucie PokéAPI, angielskie nazwy typów i podpowiedzi. Interfejs po polsku. Obliczenia uwzględniają dwa typy obronne, bez Abilities, przedmiotów, pogody i wyjątków konkretnych ruchów. Współczesna tabela typów od generacji VI.
 
 ## GitHub Pages

@@ -1,0 +1,3 @@
+# Downloaded evolution source snapshots are reproducible via the locked fetcher.
+data/evolution/
+__pycache__/

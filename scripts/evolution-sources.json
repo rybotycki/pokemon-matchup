@@ -1,0 +1,223 @@
+{
+  "snapshots": {
+    "PokeAPI/pokeapi": "e5b79b2e15d7c50735a945936afd4cd1cfd94eae",
+    "kwsch/PKHeX": "0660d1e1f4924b8478daec73281bb8071a82ad19"
+  },
+  "files": [
+    {
+      "path": "data/evolution/pokemon_species.csv",
+      "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/e5b79b2e15d7c50735a945936afd4cd1cfd94eae/data/v2/csv/pokemon_species.csv",
+      "sha256": "e66e2eeb25fd3836b0ebab6bf87bbf01960aa3c0555e2bac495fa8393c5e0c45"
+    },
+    {
+      "path": "data/evolution/version_groups.csv",
+      "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/e5b79b2e15d7c50735a945936afd4cd1cfd94eae/data/v2/csv/version_groups.csv",
+      "sha256": "28da8d89d8eb4966941f81a9e62b3990510ed4d76dd774158246551a8e7707a7"
+    },
+    {
+      "path": "data/evolution/item_names.csv",
+      "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/e5b79b2e15d7c50735a945936afd4cd1cfd94eae/data/v2/csv/item_names.csv",
+      "sha256": "c4ad0b446e395c378d8ba75d6900f051cc9ebb99431d4000adeac35f492852f0"
+    },
+    {
+      "path": "data/evolution/item_game_indices.csv",
+      "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/e5b79b2e15d7c50735a945936afd4cd1cfd94eae/data/v2/csv/item_game_indices.csv",
+      "sha256": "ad7576a23dea4e136ea887f5f04b680abc4f72131812fa011bdddeb54760c653"
+    },
+    {
+      "path": "data/evolution/move_names.csv",
+      "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/e5b79b2e15d7c50735a945936afd4cd1cfd94eae/data/v2/csv/move_names.csv",
+      "sha256": "99e23ee38ea53d1473474d463b87651deac3cd4928750f8186feae66da45c147"
+    },
+    {
+      "path": "data/evolution/pkhex/evos_g1.pkl",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/evolve/evos_g1.pkl",
+      "sha256": "434fe6112ce16b67cff10c2e8d7ba9ceac66f34f5fd17d97fecf04938f0ce97c"
+    },
+    {
+      "path": "data/evolution/pkhex/evos_g2.pkl",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/evolve/evos_g2.pkl",
+      "sha256": "bab09d5a48956e0036a57e76c555f037c614631f49cf8fef5e6531d91714e1dd"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_fr",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_fr",
+      "sha256": "63b08802afcd6233a1bfd235d699004be6db80bc12e77ae40e5a6f296a5ce7bd"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_sm",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_sm",
+      "sha256": "954c322b1d38b9d3feb9d39a4cbf212aa77d4a9ba32df349abd7b9f24ef058ec"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_swsh",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_swsh",
+      "sha256": "1ef724155dcb4bc9b2163995e998ec82ba1045e94c308efb64700e41f2c7743a"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_hgss",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_hgss",
+      "sha256": "f7040b193e96869d8d7f15f66e25a854f27b184f828e4fdd093f387df2395f30"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_rs",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_rs",
+      "sha256": "648c39c819c97f6706db4119c50abf858d6c4af4c1e0183fc2625ccda9901808"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_sv",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_sv",
+      "sha256": "0006ca2f5115e03f4bbec663173701b3cf520b8f2571d029e3184f9e2bb2b67f"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_c",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_c",
+      "sha256": "d6aef0625972a6dc8b077dc16d096c9ac00869b664a53cf8266b9fab0a6656fd"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_gg",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_gg",
+      "sha256": "cfbd21d786720303deb02798ad005788cb8a2623dc507d889a87ea56475f6c97"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_lg",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_lg",
+      "sha256": "ac487f5d9687c00b2b7ee5359467d6f8dbeb984a8c0f9b005ac1bfe6d38844ab"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_la",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_la",
+      "sha256": "8db781ca2028e65c17663b6a23366d8a50e89403e724999e59e5ccc2746d6929"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_xy",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_xy",
+      "sha256": "70625acc9ad216a7b7bd22c2deb94ace95e9e98637b728e122dd6df24a9abeef"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_bw",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_bw",
+      "sha256": "3b2989703f07416162e61328186d2858cbe3082875c98c21eb40c2f7ce85ab7e"
+    },
+    {
+      "path": "data/evolution/pkhex/evos_g3.pkl",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/evolve/evos_g3.pkl",
+      "sha256": "60ac2e1ce7e7a4226b59b180214d384eaa3d919febb37965dd21edbcdacc558f"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_dp",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_dp",
+      "sha256": "18ff6b5803cd5c7a5c4afdc54d56af5a90f0d0354a8b6fdfba86d467f9165326"
+    },
+    {
+      "path": "data/evolution/pkhex/evos_la.pkl",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/evolve/evos_la.pkl",
+      "sha256": "0dce35eab0b4e68c16e0045658278d2e16dcc9d84f4ad582bab67218598bf265"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_rb",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_rb",
+      "sha256": "e0e92b8fc460d8564aac1427a02cc3fa4f3917ab7ffed269ce5e6b706059768f"
+    },
+    {
+      "path": "data/evolution/pkhex/evos_g6.pkl",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/evolve/evos_g6.pkl",
+      "sha256": "270a7348b07f96c95c37821d17c4b6fe9e2b2526719af7229807587f729ef48a"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_za",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_za",
+      "sha256": "a76968217e23c8bfcb97e8c817568d537904d4c32561f47db52b50b4f4bf5bff"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_b2w2",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_b2w2",
+      "sha256": "6df24e7f00dab32322d9d8f8b3209d30de1c89b0de88277081fe53434211830f"
+    },
+    {
+      "path": "data/evolution/pkhex/evos_za.pkl",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/evolve/evos_za.pkl",
+      "sha256": "6eabc341e89b248b3fcac6f3fa3c951572aec6f4cc25d0ae698fd86e880c466d"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_e",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_e",
+      "sha256": "af8f94d16827cf05a8317be62ebf43a87607585c28c4cc4e5a4b4e1e9d989866"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_bdsp",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_bdsp",
+      "sha256": "4e5cbcb1fbe7ffe559ead6555dc02878e0d9b8700ce185998b381cfbb4db7ec3"
+    },
+    {
+      "path": "data/evolution/pkhex/evos_g4.pkl",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/evolve/evos_g4.pkl",
+      "sha256": "1063f0234520f541c271fe62675db051caba6c31697012e9817c180b76e80352"
+    },
+    {
+      "path": "data/evolution/pkhex/evos_uu.pkl",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/evolve/evos_uu.pkl",
+      "sha256": "a53b9297ee5791d1fd68af4c9ef8d0d602eb6de95abd32d96e3779df1afdb09b"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_pt",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_pt",
+      "sha256": "af57e87c9cc7a23df71a2df3e270490b963f2ce2828c9375c101b761ce9324b3"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_gs",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_gs",
+      "sha256": "de5dc5d7956cac8e556f693bd6057c044751d280da25ad1fc58c4ce0730124d3"
+    },
+    {
+      "path": "data/evolution/pkhex/evos_sv.pkl",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/evolve/evos_sv.pkl",
+      "sha256": "4e272da2f2659b8ef0fd3a68d28780a4300f623a78a6acaf2b470e6fb58a29ca"
+    },
+    {
+      "path": "data/evolution/pkhex/text_Items_en.txt",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/text/items/text_Items_en.txt",
+      "sha256": "ced422707941cb377098c7b82fa6e0a1cc1d93fe27e8f43915952dd1b3313831"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_ao",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_ao",
+      "sha256": "dad0848c30cf8134535de0abf499ae962e888ea8e57e3a07e45d3e1e6b338eab"
+    },
+    {
+      "path": "data/evolution/pkhex/evos_g5.pkl",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/evolve/evos_g5.pkl",
+      "sha256": "40a415c1febd807cd6e82b1bece71d7dcd724c7a17f03d9117af67304023479f"
+    },
+    {
+      "path": "data/evolution/pkhex/evos_ss.pkl",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/evolve/evos_ss.pkl",
+      "sha256": "cda3772afa0c32a20c5608dccc4a8d2ebd74e10aa35cee6520673a06962009bb"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_uu",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_uu",
+      "sha256": "78a0d3ba8de87a9d36900d88b6f56a62bc48c86d1d555573fbc25160af7484a8"
+    },
+    {
+      "path": "data/evolution/pkhex/evos_bs.pkl",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/evolve/evos_bs.pkl",
+      "sha256": "6e0c506d31c306ba8929f04afbadbfc3eb585e2a1149f34336b1b8a173d48914"
+    },
+    {
+      "path": "data/evolution/pkhex/evos_gg.pkl",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/evolve/evos_gg.pkl",
+      "sha256": "09342bb98e753a159e7c7a664fcf045bedfffbaefdc72de9597e5a9aeccc470c"
+    },
+    {
+      "path": "data/evolution/pkhex/LICENSE",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/LICENSE",
+      "sha256": "ccb349b4132ed7737f25e5adebfe61f3d52dca33708df1e50352320438d1d4c2"
+    },
+    {
+      "path": "data/evolution/pkhex/personal_y",
+      "url": "https://raw.githubusercontent.com/kwsch/PKHeX/0660d1e1f4924b8478daec73281bb8071a82ad19/PKHeX.Core/Resources/byte/personal/personal_y",
+      "sha256": "e5d61e253ddf07fbe098f1ef9a3bec2f3501574bee3d9772565a620215ffc594"
+    }
+  ]
+}

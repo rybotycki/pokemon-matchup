@@ -372,6 +372,59 @@ kbd { flex-shrink: 0; padding: 1px 5px; border: 1px solid #bdc9bb; border-radius
   .lens { width: 28px; height: 28px; }
   .page-tabs [role=tab] { min-height: 36px; padding-top: 7px; padding-bottom: 7px; }
 }
+/* A single CSS cover opens on document load; no timers or image downloads. */
+.dex-cover {
+  position: absolute;
+  inset: -1px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: clamp(100px, 20vh, 180px);
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(115deg, #ffffff12, transparent 55%) var(--red);
+  border: 2px solid var(--ink);
+  border-left: 8px solid var(--dark-red);
+  border-radius: 20px 20px 20px 34px;
+  box-shadow: inset 2px 2px 0 #ffaaaa66, inset -4px -4px 0 #992b3e80;
+  transform-origin: left center;
+  backface-visibility: hidden;
+  animation: dex-open 760ms cubic-bezier(.35, .05, .2, 1) both;
+}
+.cover-emblem {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  margin-bottom: 20px;
+  border: 5px solid #fff2d9;
+  border-radius: 50%;
+  background: linear-gradient(transparent 46%, #fff2d9 46% 54%, transparent 54%);
+  opacity: .9;
+}
+.cover-emblem::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  border: 5px solid #fff2d9;
+  border-radius: 50%;
+  background: var(--red);
+  transform: translate(-50%, -50%);
+}
+.cover-title { color: #fff2d9; font: 700 23px/1.3 var(--font-display); letter-spacing: .1em; }
+.cover-caption { margin-top: 8px; color: #fff2d9b3; font: 500 10px/1.5 var(--font-mono); letter-spacing: .14em; }
+@keyframes dex-open {
+  0%, 10% { visibility: visible; opacity: 1; transform: perspective(1200px) rotateY(0); }
+  75% { opacity: 1; }
+  100% { visibility: hidden; opacity: 0; transform: perspective(1200px) rotateY(-105deg); }
+}
+@media (max-width: 600px), (max-width: 900px) and (max-height: 500px) and (pointer: coarse) {
+  .dex-cover { position: fixed; inset: 3px; border-radius: 10px; padding-top: max(100px, 25dvh); }
+}
 @media (prefers-reduced-motion: reduce) {
+  .dex-cover { display: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }

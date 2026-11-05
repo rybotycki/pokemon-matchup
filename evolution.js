@@ -53,6 +53,7 @@
  }
  async function activate(next,update=true){
   const token=++revision;if(page==='matchups'&&next==='evolutions')lastAttackHash=location.hash;
+  if(page!==next)document.querySelector('main').scrollTop=0;
   page=next;const evo=next==='evolutions';attackPanel.hidden=evo;evoPanel.hidden=!evo;document.querySelector('#matchup-explanation').hidden=evo;document.querySelector('#evolution-sources').hidden=!evo;
   attackTab.setAttribute('aria-selected',String(!evo));evoTab.setAttribute('aria-selected',String(evo));attackTab.tabIndex=evo?-1:0;evoTab.tabIndex=evo?0:-1;
   document.querySelector('.intro h1').replaceChildren(document.createTextNode(evo?'Sprawdź ':'Sprawdź '),el('span','',evo?'ewolucje.':'typy ataków.'));

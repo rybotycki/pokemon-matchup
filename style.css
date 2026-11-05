@@ -62,7 +62,7 @@ main { max-width: 780px; margin: auto; padding: 16px 24px 28px; }
 .intro { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; margin: 0 4px 12px; }
 .intro h1 { font: 700 25px/1.2 var(--font-display); letter-spacing: -.8px; }
 .intro h1 span { color: var(--red); }
-footer { max-width: 1080px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin: 12px auto 0; padding: 20px 32px 24px; border-top: 1px solid #253b4320; color: var(--muted); font-size: 11px; line-height: 1.6; }
+footer { position: relative; left: 50%; transform: translateX(-50%); width: min(1080px, calc(100vw - 64px)); max-width: 1080px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin: 12px auto 0; padding: 20px 32px 24px; border-top: 1px solid #253b4320; color: var(--muted); font-size: 11px; line-height: 1.6; }
 footer a { color: var(--dark-red); }
 footer small { width: 100%; font-size: inherit; }
 .muted { margin: 0 4px; color: var(--muted); }
@@ -281,6 +281,92 @@ kbd { flex-shrink: 0; padding: 1px 5px; border: 1px solid #bdc9bb; border-radius
   .game-picker > summary > span:first-child { font-size: 11px; }
   .game-list { padding: 10px; }
   footer { padding: 18px 16px 24px; }
+}
+/* On phones the viewport itself is the device. Only its interior scrolls. */
+@media (max-width: 600px), (max-width: 900px) and (max-height: 500px) and (pointer: coarse) {
+  html { height: 100%; overflow: hidden; background: var(--red); }
+  body { height: 100%; overflow: hidden; background: var(--red); }
+  .top, .intro { display: none; }
+  main {
+    --device-header-height: 62px;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    height: 100dvh;
+    margin: 0;
+    padding: env(safe-area-inset-top, 0px) max(14px, env(safe-area-inset-right, 0px)) max(28px, env(safe-area-inset-bottom, 0px)) max(14px, env(safe-area-inset-left, 0px));
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-width: none;
+    background: var(--red);
+    border: 3px solid var(--ink);
+    border-radius: 14px;
+    box-shadow: inset 3px 0 0 #ed5963, inset -3px 0 0 var(--dark-red);
+    scroll-padding-top: calc(var(--device-header-height) + 70px + env(safe-area-inset-top, 0px));
+    -webkit-overflow-scrolling: touch;
+  }
+  main::-webkit-scrollbar { display: none; }
+  main::after {
+    content: '';
+    position: fixed;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    z-index: 25;
+    height: max(16px, env(safe-area-inset-bottom, 0px));
+    background: var(--red);
+    border-top: 2px solid #b72b3d;
+    border-radius: 0 0 10px 10px;
+    pointer-events: none;
+  }
+  .workspace { display: contents; animation: none; }
+  .workspace::after { display: none; }
+  .device-top {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    height: var(--device-header-height);
+    min-height: var(--device-header-height);
+    margin: 0;
+    padding: 14px 2px 12px;
+    background: var(--red);
+    border-bottom: 0;
+    box-shadow: 0 -40px 0 40px var(--red);
+  }
+  .device-label { font-size: 10px; }
+  .lens { width: 32px; height: 32px; }
+  .page-tabs {
+    position: sticky;
+    top: calc(var(--device-header-height) + env(safe-area-inset-top, 0px));
+    z-index: 20;
+    margin-bottom: 16px;
+    background: #b72b3d;
+    box-shadow: 0 0 0 10px var(--red), 0 8px 0 10px var(--red);
+  }
+  .page-tabs [role=tab] { min-height: 42px; font-size: 13px; }
+  #matchup-panel, #evolution-panel { padding-top: 8px; }
+  .explanation, .evo-sources { color: #fff4e1; margin-top: 28px; }
+  .explanation h2, .evo-sources a { color: #fff9eb; }
+  .info-icon { border-color: #fff4e1; }
+  footer {
+    position: static;
+    width: auto;
+    transform: none;
+    margin-top: 24px;
+    padding: 16px 0 8px;
+    border-color: #922036;
+    color: #fff4e1;
+  }
+  footer a, footer .muted { color: #fff9eb; }
+}
+@media (max-width: 900px) and (max-height: 500px) and (pointer: coarse) {
+  main { --device-header-height: 48px; }
+  .device-top { padding-top: 8px; padding-bottom: 8px; }
+  .lens { width: 28px; height: 28px; }
+  .page-tabs [role=tab] { min-height: 36px; padding-top: 7px; padding-bottom: 7px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }

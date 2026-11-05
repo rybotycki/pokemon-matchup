@@ -25,7 +25,7 @@
   const section=el('section','game-generation');section.append(el('h3','', 'Generacja '+gen));const row=el('div','game-options');
   for(const g of data().games.filter(g=>g.generation===gen)){const b=el('button','game-option',g.name);b.type='button';b.dataset.game=g.id;b.addEventListener('click',()=>{evoGame=g.id;try{localStorage.setItem('pokematch-game',g.id);}catch{}gamePicker.open=false;writeRoute();render();gamePicker.querySelector('summary').focus();});row.append(b);}section.append(row);gamesList.append(section);
  }}
- function thumb(id){const img=el('img','evo-thumb');img.alt='';img.width=64;img.height=64;img.loading='lazy';img.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+id+'.png';img.addEventListener('error',()=>img.hidden=true);return img;}
+ function thumb(id,role='chain'){const size={main:96,chain:64,transform:72}[role];const img=el('img','evo-thumb sprite-'+role);img.alt='';img.width=size;img.height=size;img.loading='lazy';img.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+id+'.png';img.addEventListener('error',()=>img.hidden=true);return img;}
  function typeBadges(n){
   const box=el('span','type-badges evo-types');
   const types=n.types||indexed.find(p=>p.id===n.formId||p.pokemonId===n.pokemonId)?.types||[];
@@ -39,7 +39,7 @@
  }
  function render(){if(!data())return;const view=EvolutionEngine.view(data(),evoPokemon,evoGame);evoGame=view.game.id;gameName.textContent=view.game.name;
   for(const button of gamesList.querySelectorAll('button'))button.setAttribute('aria-pressed',String(button.dataset.game===evoGame));
-  output.replaceChildren();const card=el('article','result-card evolution-card');const header=el('div','pokemon-head');const info=el('div');info.append(el('span','dex-label',view.game.name.toUpperCase()+' / #'+String(evoPokemon.dex).padStart(4,'0')),el('h2','pokemon-name',view.node?.name||evoPokemon.name));info.append(typeBadges(view.node||evoPokemon));header.append(info,thumb(view.node?.pokemonId||evoPokemon.pokemonId));card.append(header);const body=el('div','evolution-body');card.append(body);
+  output.replaceChildren();const card=el('article','result-card evolution-card');const header=el('div','pokemon-head');const info=el('div');info.append(el('span','dex-label',view.game.name.toUpperCase()+' / #'+String(evoPokemon.dex).padStart(4,'0')),el('h2','pokemon-name',view.node?.name||evoPokemon.name));info.append(typeBadges(view.node||evoPokemon));header.append(info,thumb(view.node?.pokemonId||evoPokemon.pokemonId,'main'));card.append(header);const body=el('div','evolution-body');card.append(body);
   if(!view.available){body.append(el('p','evo-notice','Ten Pokémon lub ta forma nie jest obsługiwana w '+view.game.name+'. Zmień grę, aby sprawdzić jej ewolucje.'));output.append(card);return;}
   if(view.special)body.append(el('p','evo-notice','Wybrana forma jest przemianą. Poniżej znajdziesz linię ewolucyjną bazowego Pokémona, a dostępne przemiany w osobnej sekcji.'));
   if(evoPokemon.slug.includes('gmax')&&[25,52,133].includes(evoPokemon.dex)&&view.game.table==='swsh')body.append(el('p','evo-notice','Gigantamax Factor blokuje ewolucję tego osobnika. Usuń go przez Max Soup (Isle of Armor), aby móc ewoluować.'));
@@ -48,7 +48,7 @@
   if(view.branches.length){const details=el('details','evo-branches');details.append(el('summary','', 'Inne odgałęzienia tej rodziny ('+view.branches.length+')'));edgeCards(details,'Pozostałe ścieżki',view.branches,'');body.append(details);}
   const section=el('section','evo-section transformations');section.append(el('h3','evo-section-title','Przemiany w walce'));
   if(!view.transformations.length)section.append(el('p','evo-empty','Brak Mega Ewolucji, Dynamaxu, Gigantamaxu lub Terastalizacji dla tej formy w wybranej grze.'));
-  for(const t of view.transformations){const item=el('article','transformation-card');const top=el('div','transformation-top');const label=el('div');label.append(el('span','transformation-kind',t.kind),el('h4','',t.title));top.append(label);const pictured=indexed.find(p=>p.slug===t.slug);if(pictured)label.append(typeBadges(pictured));else if(t.kind==='Dynamax')label.append(typeBadges(view.node));if(t.pokemonId||pictured)top.append(thumb(t.pokemonId||pictured.pokemonId));item.append(top,el('p','evo-condition',t.condition));section.append(item);}
+  for(const t of view.transformations){const item=el('article','transformation-card');const top=el('div','transformation-top');const label=el('div');label.append(el('span','transformation-kind',t.kind),el('h4','',t.title));top.append(label);const pictured=indexed.find(p=>p.slug===t.slug);if(pictured)label.append(typeBadges(pictured));else if(t.kind==='Dynamax')label.append(typeBadges(view.node));if(t.pokemonId||pictured)top.append(thumb(t.pokemonId||pictured.pokemonId,'transform'));item.append(top,el('p','evo-condition',t.condition));section.append(item);}
   section.append(el('p','evo-footnote','Przemiany są tymczasowe i nie zastępują ewolucji. Dla przemian późniejszego etapu wybierz go w powyższej linii.'));body.append(section);output.append(card);
  }
  async function activate(next,update=true){

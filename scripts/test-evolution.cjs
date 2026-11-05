@@ -19,9 +19,10 @@ a.ok(view('charizard','red').transformations.length===0);a.ok(!view('venusaur','
 a.ok(!view('dreepy','red').available);a.equal(view('charizard','sword').ancestors[0].fromNode.species,4);a.equal(view('charizard','sword').ancestors.length,2);
 a.ok(!view('floette-red','legends-za').transformations.length);a.ok(view('floette-eternal','legends-za').transformations.some(t=>t.kind==='Mega Ewolucja'));
 a.match(view('terapagos','scarlet').transformations[0].condition,/Stellar/);a.match(view('ogerpon','scarlet').transformations[0].condition,/maski/);
+a.deepEqual(Array.from(view('clefairy','red').node.types),['normal']);a.deepEqual(Array.from(view('clefairy','x').node.types),['fairy']);a.deepEqual(Array.from(view('magnemite','red').node.types),['electric']);a.deepEqual(Array.from(view('magnemite','gold').node.types),['electric','steel']);
 let edges=0;
 for(const [id,table] of Object.entries(data.tables)){
- const nodes=new Map(table.nodes.map(n=>[n.id,n]));a.equal(nodes.size,table.nodes.length);
+ const nodes=new Map(table.nodes.map(n=>[n.id,n]));a.equal(nodes.size,table.nodes.length);for(const n of table.nodes){a.ok(n.types.length>=1&&n.types.length<=2);a.ok(n.types.every(t=>Object.hasOwn(context.window.POKE_DATA.chart,t)));}
  for(const e of table.edges){a.ok(nodes.has(e.from),id+': missing source');a.ok(nodes.has(e.to),id+': missing target');a.equal(nodes.get(e.from).chain,nodes.get(e.to).chain,id+': unrelated species connected');a.ok(e.condition&&!e.condition.includes('Warunek specjalny'));edges++;}
  for(const m of table.megas)a.ok(!m.condition.includes('odpowiedni Mega Stone'));
 }

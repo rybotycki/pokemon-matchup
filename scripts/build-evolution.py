@@ -36,6 +36,9 @@ def form_meta(species,form,gen,mega=False):
  f=min(candidates,key=lambda f:int(f['id']));name=labels.get(int(f['id'])) or snames[species]
  if species==869:name=name.replace('Strawberry Sweet','').strip(' -·')
  return {'id':f'{species}:{form}','species':species,'form':form,'formId':int(f['id']),'name':name,'slug':f['identifier'],'pokemonId':int(f['pokemon_id']),'chain':int(sp[species]['evolution_chain_id'])}
+# Personal tables preserve historical type changes as well as form support.
+modern_types=['normal','fighting','flying','poison','ground','rock','bug','ghost','steel','fire','water','grass','electric','psychic','ice','dragon','dark','fairy']
+old_types={0:'normal',1:'fighting',2:'flying',3:'poison',4:'ground',5:'rock',7:'bug',8:'ghost',9:'steel',20:'fire',21:'water',22:'grass',23:'electric',24:'psychic',25:'ice',26:'dragon',27:'dark'}
 # Personal tables describe supported forms, not wild encounter availability.
 configs={
  'rb':('g1',1,151,28,None,None,None),'y':('g1',1,151,28,None,None,None),
@@ -114,6 +117,9 @@ for table,(backend,gen,maximum,size,fo,fc,flag) in configs.items():
    if data is None:continue
    meta=form_meta(s,f,gen)
    if meta is None:continue
+   offsets=(7,8) if gen==2 else (6,7)
+   raw_types=[data[x] for x in offsets]
+   meta['types']=list(dict.fromkeys(old_types[t] if gen<=2 else modern_types[t] for t in raw_types))
    # Partner Pikachu/Eevee and cap Pikachu do not evolve.
    if s==670 and f==5 and table!='za':continue
    nodes[meta['id']]=meta;indices[index]=meta['id']

@@ -1,42 +1,32 @@
-<!doctype html>
-<html lang="pl">
-<head>
+<!DOCTYPE html><html lang="pl"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#d93444">
 <meta name="description" content="Wpisz nazwę Pokémona i sprawdź skuteczność wszystkich typów ataków. Formy regionalne, podpowiedzi i działanie bez API.">
 <title>PokéMatch — sprawdź, czym atakować</title>
-<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=8">
-<script src="data.js" defer></script><script src="app.js?v=8" defer></script>
-<script src="evolution-engine.js?v=8" defer></script><script src="evolution.js?v=8" defer></script>
+<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=9">
+<script src="data.js" defer=""></script><script src="app.js?v=8" defer=""></script>
+<script src="evolution-engine.js?v=8" defer=""></script><script src="evolution.js?v=9" defer=""></script>
 </head>
 <body>
 <header class="top"><a href="./" class="brand"><span class="brandmark" aria-hidden="true">◒</span> PokéMatch<span class="brand-dot">.</span></a><span class="top-note">BATTLE COMPANION</span></header>
 <main>
 <section class="intro"><h1>Sprawdź <span>typy ataków.</span></h1><button class="hero-ball" type="button" aria-label="Otwórz Poké Ball" aria-pressed="false" title="Otwórz Poké Ball"><span class="ball-glow" aria-hidden="true"></span><span class="ball-bottom" aria-hidden="true"></span><span class="ball-top" aria-hidden="true"></span><span class="ball-hub" aria-hidden="true"></span></button></section>
-<nav class="page-tabs" role="tablist" aria-label="Narzędzia PokéMatch"><button type="button" role="tab" id="tab-matchups" aria-controls="matchup-panel" aria-selected="true">Typy ataków</button><button type="button" role="tab" id="tab-evolutions" aria-controls="evolution-panel" aria-selected="false" tabindex="-1">Ewolucje</button></nav>
-<section id="matchup-panel" role="tabpanel" aria-labelledby="tab-matchups">
-<section class="workspace" aria-label="Wyszukiwanie i wyniki"><div class="device-top" aria-hidden="true"><span class="lens"></span><span class="led red"></span><span class="led yellow"></span><span class="led green"></span><span class="device-label">POKÉMATCH / DEX-01</span></div>
-<div class="mode-switch" role="group" aria-label="Sposób wyboru przeciwnika"><button type="button" id="mode-pokemon" aria-pressed="true" aria-controls="pokemon-controls">Pokémon</button><button type="button" id="mode-types" aria-pressed="false" aria-controls="type-controls">Typy</button></div>
-<div id="pokemon-controls"><div class="search-wrap"><label for="search">Pokémon przeciwnika</label><div class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Wpisz nazwę lub numer, np. Charizard" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false"><kbd aria-hidden="true">/</kbd></div><ul id="suggestions" role="listbox" aria-label="Podpowiedzi" hidden></ul><p id="search-status" class="sr-only" role="status"></p></div>
+
+
+
+<section class="workspace" aria-label="Pokédex PokéMatch"><div class="device-top" aria-hidden="true"><span class="lens"></span><span class="led red"></span><span class="led yellow"></span><span class="led green"></span><span class="device-label">POKÉMATCH / DEX-01</span></div><nav class="page-tabs" role="tablist" aria-label="Narzędzia PokéMatch"><button type="button" role="tab" id="tab-matchups" aria-controls="matchup-panel" aria-selected="true">Typy ataków</button><button type="button" role="tab" id="tab-evolutions" aria-controls="evolution-panel" aria-selected="false" tabindex="-1">Ewolucje</button></nav><section id="matchup-panel" role="tabpanel" aria-labelledby="tab-matchups">
+
+
+<div class="mode-switch" role="group" aria-label="Sposób wyboru przeciwnika"><button type="button" id="mode-pokemon" aria-pressed="true" aria-controls="pokemon-controls">Pokémon</button><button type="button" id="mode-types" aria-pressed="false" aria-controls="type-controls">Typy</button></div><div id="pokemon-controls"><div class="search-wrap"><label for="search">Pokémon przeciwnika</label><div class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Wpisz nazwę lub numer, np. Charizard" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false"><kbd aria-hidden="true">/</kbd></div><ul id="suggestions" role="listbox" aria-label="Podpowiedzi" hidden=""></ul><p id="search-status" class="sr-only" role="status"></p></div>
 <div class="quick" id="quick"><span>Wypróbuj</span><button data-slug="charizard">Charizard ↗</button><button data-slug="gyarados">Gyarados ↗</button><button data-slug="ninetales-alola">Alolan Ninetales ↗</button></div>
-</div>
-<div id="type-controls" hidden><p class="type-help">Wybierz typy obronne przeciwnika.</p><div class="type-selectors"><div><label for="type-first">Pierwszy typ</label><select id="type-first"></select></div><div><label for="type-second">Drugi typ <span>(opcjonalny)</span></label><select id="type-second"><option value="">Brak</option></select></div></div></div>
-<div id="result" aria-live="polite"></div>
-</section>
-<section class="explanation"><span class="info-icon">i</span><div><h2>Liczy się typ ataku</h2><p>Mnożnik pokazuje wpływ typu ataku na wybranego Pokémona. Dwa typy obronne łączą swoje efekty. Uwzględniamy wyłącznie typy: bez Abilities, przedmiotów i efektów ruchów. Współczesna tabela typów (od generacji VI).</p></div></section>
-</section>
-<section id="evolution-panel" role="tabpanel" aria-labelledby="tab-evolutions" hidden>
-<section class="workspace evo-workspace" aria-label="Ewolucje i przemiany">
-<div class="device-top" aria-hidden="true"><span class="lens"></span><span class="led red"></span><span class="led yellow"></span><span class="led green"></span><span class="device-label">POKÉMATCH / EVOLUTION DEX</span></div>
+</div><div id="type-controls" hidden=""><p class="type-help">Wybierz typy obronne przeciwnika.</p><div class="type-selectors"><div><label for="type-first">Pierwszy typ</label><select id="type-first"></select></div><div><label for="type-second">Drugi typ <span>(opcjonalny)</span></label><select id="type-second"><option value="">Brak</option></select></div></div></div><div id="result" aria-live="polite"></div></section><section id="evolution-panel" role="tabpanel" aria-labelledby="tab-evolutions" hidden="">
+
+
 <div class="evo-controls">
 <details id="evo-game-picker" class="game-picker"><summary><span>Wersja gry</span><strong id="evo-game-name">Sword</strong><span aria-hidden="true">⌄</span></summary><div id="evo-games" class="game-list" aria-label="Dostępne gry"></div></details>
-<div class="search-wrap evo-search-wrap"><label for="evo-search">Pokémon</label><div class="search-field"><span aria-hidden="true">⌕</span><input id="evo-search" type="search" placeholder="Wpisz nazwę, formę lub numer" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-controls="evo-suggestions" aria-expanded="false"><kbd aria-hidden="true">/</kbd></div><ul id="evo-suggestions" class="evo-suggestions" role="listbox" aria-label="Podpowiedzi Pokémonów" hidden></ul><p id="evo-search-status" class="sr-only" role="status"></p></div>
+<div class="search-wrap evo-search-wrap"><label for="evo-search">Pokémon</label><div class="search-field"><span aria-hidden="true">⌕</span><input id="evo-search" type="search" placeholder="Wpisz nazwę, formę lub numer" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-controls="evo-suggestions" aria-expanded="false"><kbd aria-hidden="true">/</kbd></div><ul id="evo-suggestions" class="evo-suggestions" role="listbox" aria-label="Podpowiedzi Pokémonów" hidden=""></ul><p id="evo-search-status" class="sr-only" role="status"></p></div>
 <p class="evo-version-note">Warunki dla wybranej gry, z aktualizacjami i DLC. Obecność Pokémona w grze może wymagać wymiany, transferu lub wydarzenia.</p>
-</div>
-<div id="evo-result" aria-live="polite"></div>
-</section>
-<details class="evo-sources"><summary>Źródła i zakres danych</summary><p>Ewolucje: tabele gier z <a href="https://github.com/kwsch/PKHeX" target="_blank" rel="noopener">PKHeX</a>, nazwy i formy: <a href="https://pokeapi.co/" target="_blank" rel="noopener">PokéAPI</a>. Dane obejmują główne gry RPG od Red / Blue do Legends: Z-A z Mega Dimension. Pokémon GO i Champions nie są objęte tym widokiem.</p><p>Możliwość używania formy nie oznacza możliwości jej złapania ani ewoluowania w tej grze. Przemiany w walce nie są trwałymi ewolucjami. Dane o Mega Ewolucjach, Dynamaxie i Terastalizacji uzupełniono na podstawie oficjalnych opisów tych mechanik.</p></details>
-</section>
-</main>
+</div><div id="evo-result" aria-live="polite"></div></section></section><section class="explanation" id="matchup-explanation"><span class="info-icon">i</span><div><h2>Liczy się typ ataku</h2><p>Mnożnik pokazuje wpływ typu ataku na wybranego Pokémona. Dwa typy obronne łączą swoje efekty. Uwzględniamy wyłącznie typy: bez Abilities, przedmiotów i efektów ruchów. Współczesna tabela typów (od generacji VI).</p></div></section><details class="evo-sources" id="evolution-sources" hidden=""><summary>Źródła i zakres danych</summary><p>Ewolucje: tabele gier z <a href="https://github.com/kwsch/PKHeX" target="_blank" rel="noopener">PKHeX</a>, nazwy i formy: <a href="https://pokeapi.co/" target="_blank" rel="noopener">PokéAPI</a>. Dane obejmują główne gry RPG od Red / Blue do Legends: Z-A z Mega Dimension. Pokémon GO i Champions nie są objęte tym widokiem.</p><p>Możliwość używania formy nie oznacza możliwości jej złapania ani ewoluowania w tej grze. Przemiany w walce nie są trwałymi ewolucjami. Dane o Mega Ewolucjach, Dynamaxie i Terastalizacji uzupełniono na podstawie oficjalnych opisów tych mechanik.</p></details></main>
 <footer><span>PokéMatch <span class="muted">/</span> <span id="count"></span></span><span>Dane: <a href="https://pokeapi.co/" target="_blank" rel="noopener">PokéAPI ↗</a> · <span id="date"></span></span><small>Fanowski projekt. Pokémon należy do Nintendo, Game Freak i Creatures.</small></footer>
+
 </body></html>
